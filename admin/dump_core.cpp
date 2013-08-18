@@ -77,8 +77,6 @@ int main(int argc, char **args)
   snprintf(cwd, PATH_MAX, "/proc/%s/cwd", sPid.c_str()); //argv[1] is pid
   chdir(cwd);
   
-  FILE *fp = fopen(sCoreName.c_str(), "wb+");
-  
   DumpCoreFile(sCoreName.c_str());
   
   chmod(sCoreName.c_str(),  S_IRUSR|S_IWUSR|S_IRGRP|S_IWGRP|S_IROTH|S_IWOTH);
